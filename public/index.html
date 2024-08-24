@@ -1,0 +1,41 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Sharing App</title>
+    <style>
+        #videoContainer {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        #sharedScreen {
+            max-width: 80%;
+            border: 1px solid #ccc;
+        }
+        #roomControls, #sharingControls {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Screen Sharing App</h1>
+    <div id="roomControls">
+        <input type="text" id="roomInput" placeholder="Enter room name">
+        <button id="createRoom">Create Room</button>
+        <button id="joinRoom">Join Room</button>
+    </div>
+    <div id="roomInfo"></div>
+    <div id="sharingControls" style="display: none;">
+        <button id="startSharing">Start Sharing</button>
+        <button id="stopSharing" disabled>Stop Sharing</button>
+    </div>
+    <div id="videoContainer">
+        <video id="sharedScreen" autoplay playsinline></video>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
